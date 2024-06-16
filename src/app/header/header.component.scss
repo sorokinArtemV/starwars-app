@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  font-size: 24px;
+  cursor: pointer;
+
+  &__logo {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
