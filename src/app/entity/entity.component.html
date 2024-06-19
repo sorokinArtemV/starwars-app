@@ -1,8 +1,15 @@
 <section class="section">
   <div class="entity">
-    <button class="btn">
-      <img src="{{imagePath()}}" alt="{{selectedElement.type}}" class="btn__image">
-      <span class="entity-name">{{ selectedElement.type }}</span>
+    <button
+      class="btn"
+      [class.btn--active]="isSelected()"
+      (click)="onSelectElement()">
+      <img
+        [src]="imagePath()"
+        [alt]="navEntity().type"
+        class="btn__image"
+      />
+      <span class="entity-name">{{ navEntity().type }}</span>
     </button>
   </div>
 </section>

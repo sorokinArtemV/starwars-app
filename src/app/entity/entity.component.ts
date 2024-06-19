@@ -1,7 +1,5 @@
-import { Component, computed } from '@angular/core';
-import { navigationElements } from '../navigation-elements';
-
-const randomIndex = () => Math.floor(Math.random() * navigationElements.length);
+import { Component, computed, input, output } from '@angular/core';
+import { NavEntity } from '../nav-entity.model';
 
 
 @Component({
@@ -12,7 +10,14 @@ const randomIndex = () => Math.floor(Math.random() * navigationElements.length);
   styleUrl: './entity.component.scss'
 })
 export class EntityComponent {
-  selectedElement = navigationElements[randomIndex()];
+  navEntity = input.required<NavEntity>();
+  isSelected = input.required<boolean>();
 
-  imagePath = computed(() => `./assets/${this.selectedElement.image}`);
+  imagePath = computed(() => `assets/${this.navEntity().image}`);
+
+  selected = output<string>();
+
+  onSelectElement() {
+    this.selected.emit(this.navEntity().id);
+  }
 }

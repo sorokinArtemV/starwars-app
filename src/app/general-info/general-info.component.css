@@ -1,0 +1,23 @@
+.general-info {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  font-size: 24px;
+  margin: 20px auto;
+  max-width: 25%;
+}
+.general-info__title {
+  font-size: 18px;
+}
+.general-info__text {
+  margin-top: 10px;
+  font-size: 16px;
+}
+.general-info__link {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=general-info.component.css.map */

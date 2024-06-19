@@ -1,0 +1,23 @@
+<main class="main">
+  <nav class="nav">
+    <ul class="nav__list">
+      @for (navEl of navElements; track navEl.id) {
+        <li class="nav__item">
+          <app-entity
+            [isSelected]="navEl.id === selectedElementId"
+            [navEntity]="navEl"
+            (selected)="onSelectElement($event)"
+          />
+        </li>
+      }
+
+    </ul>
+  </nav>
+
+  @if (selectedElementId) {
+    <section class="content">
+      <app-general-info [elType]="selectedElement?.type" [elDescription]="selectedElement?.description"/>
+    </section>
+  }
+</main>
+

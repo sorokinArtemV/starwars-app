@@ -1,0 +1,12 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  justify-content: center;
+  align-items: center;
+}
+.details__text {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=details.component.css.map */

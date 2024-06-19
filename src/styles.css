@@ -1,18 +1,17 @@
 .section {
-  width: 50%;
-  margin: 2.5rem auto; /* This will center your section on the page */
-  max-width: 1200px; /* You can set a max-width to prevent the section from getting too wide on large screens */
+  margin: 2.5rem auto;
+  max-width: 1200px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .section {
-    width: 90%; /* Increase width to 90% on smaller screens if desired */
+    width: 90%;
   }
 }
 @media (max-width: 480px) {
   .section {
-    width: 100%; /* You might want it to take up the full width on very small screens */
+    width: 100%;
   }
 }
 

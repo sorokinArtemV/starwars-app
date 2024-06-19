@@ -3,6 +3,7 @@
   color: #000;
   border: 1px solid #000;
   padding: 5px 20px;
+  cursor: pointer;
   font-family: "Star Jedi", sans-serif;
   display: flex;
   align-items: center;
@@ -11,11 +12,12 @@
 }
 .btn:hover {
   background-color: #ffe81f;
-  color: #000;
-  border-color: #000;
 }
 .btn__image {
   width: 25px;
+}
+.btn--active {
+  background-color: #ffe81f;
 }
 
 /*# sourceMappingURL=entity.component.css.map */
