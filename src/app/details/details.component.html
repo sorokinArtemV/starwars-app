@@ -76,8 +76,6 @@
         <p>People: {{ entity.people }}</p>
         <p>Films: {{ entity.films }}</p>
         <p>Created: {{ entity.created }}</p>
-        <p>Edited: {{ entity.edited }}</p>
-        <p>Url: {{ entity.url }}</p>
       }
     } @else if (elType === NavElementTypes.Planets) {
       @for (entity of data.results; track entity.name) {
