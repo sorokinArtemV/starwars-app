@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { EntityComponent } from './entity/entity.component';
-import { navigationElements } from './navigation-elements';
 import { GeneralInfoComponent } from './general-info/general-info.component';
 import { HomeComponent } from './home/home.component';
 
@@ -22,17 +21,6 @@ import { HomeComponent } from './home/home.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  navElements = navigationElements;
-  selectedElementId ?: string;
-
-  get selectedElement() {
-    return this.navElements.find(el => el.id === this.selectedElementId);
-  }
-
-  onSelectElement(id: string) {
-    this.selectedElementId = id;
-  }
-}
+export class AppComponent {}
 
 

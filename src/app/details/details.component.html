@@ -1,4 +1,99 @@
 <div class="details">
   <h3 class="details__heading">Details of {{ elType }}</h3>
-  <p class="details__text">info</p>
+  @if (data?.results?.length > 0) {
+    @if (elType === NavElementTypes.Characters) {
+      @for (entity of data.results; track entity.name) {
+        <h4> {{ entity.name }}</h4>
+        <p>Birth year: {{ entity.birth_year }}</p>
+        <p>Hair color: {{ entity.hair_color }}</p>
+        <p>Skin color: {{ entity.skin_color }}</p>
+        <p>Height: {{ entity.height }}</p>
+        <p>Mass: {{ entity.mass }}</p>
+        <p>Gender: {{ entity.gender }} </p>
+        <p>Homeworld: {{ entity.homeworld }}</p>
+        <p>Species: {{ entity.species }}</p>
+        <p>Vehicle: {{ entity.vehicles }}</p>
+        <p>Starship: {{ entity.starships }}</p>
+      }
+    } @else if (elType === NavElementTypes.Movies) {
+      @for (entity of data.results; track entity.title) {
+        <h4> {{ entity.title }}</h4>
+        <p>Opening crawl: {{ entity.opening_crawl }}</p>
+        <p>Director: {{ entity.director }}</p>
+        <p>Producer: {{ entity.producer }}</p>
+        <p>Characters: {{ entity.characters }}</p>
+        <p>Release date: {{ entity.release_date }}</p>
+        <p>Species: {{ entity.species }}</p>
+        <p>Starship: {{ entity.starships }}</p>
+        <p>Vehicle: {{ entity.vehicles }}</p>
+      }
+    } @else if (elType === NavElementTypes.Starships) {
+      @for (entity of data.results; track entity.name) {
+        <h4> {{ entity.name }}</h4>
+        <p>Model: {{ entity.model }}</p>
+        <p>Manufacturer: {{ entity.manufacturer }}</p>
+        <p>Cost in credits: {{ entity.cost_in_credits }}</p>
+        <p>Length: {{ entity.length }}</p>
+        <p>Max atmosphering speed: {{ entity.max_atmosphering_speed }}</p>
+        <p>Crew: {{ entity.crew }}</p>
+        <p>Passengers: {{ entity.passengers }}</p>
+        <p>Cargo capacity: {{ entity.cargo_capacity }}</p>
+        <p>Consumables: {{ entity.consumables }}</p>
+        <p>Hyperdrive rating: {{ entity.hyperdrive_rating }}</p>
+        <p>MGLT: {{ entity.MGLT }}</p>
+        <p>Starship class: {{ entity.starship_class }}</p>
+        <p>Pilots: {{ entity.pilots }}</p>
+        <p>Films: {{ entity.films }}</p>
+      }
+    } @else if (elType === NavElementTypes.Vehicles) {
+      @for (entity of data.results; track entity.name) {
+        <h4> {{ entity.name }}</h4>
+        <p>Model: {{ entity.model }}</p>
+        <p>Manufacturer: {{ entity.manufacturer }}</p>
+        <p>Cost in credits: {{ entity.cost_in_credits }}</p>
+        <p>Length: {{ entity.length }}</p>
+        <p>Max atmosphering speed: {{ entity.max_atmosphering_speed }}</p>
+        <p>Crew: {{ entity.crew }}</p>
+        <p>Passengers: {{ entity.passengers }}</p>
+        <p>Cargo capacity: {{ entity.cargo_capacity }}</p>
+        <p>Consumables: {{ entity.consumables }}</p>
+        <p>Vehicle class: {{ entity.vehicle_class }}</p>
+        <p>Pilots: {{ entity.pilots }}</p>
+        <p>Films: {{ entity.films }}</p>
+      }
+    } @else if (elType === NavElementTypes.Species) {
+      @for (entity of data.results; track entity.name) {
+        <h4> {{ entity.name }}</h4>
+        <p>Classification: {{ entity.classification }}</p>
+        <p>Designation: {{ entity.designation }}</p>
+        <p>Average height: {{ entity.average_height }}</p>
+        <p>Average lifespan: {{ entity.average_lifespan }}</p>
+        <p>Eye colors: {{ entity.eye_colors }}</p>
+        <p>Hair colors: {{ entity.hair_colors }}</p>
+        <p>Skin colors: {{ entity.skin_colors }}</p>
+        <p>Language: {{ entity.language }}</p>
+        <p>Homeworld: {{ entity.homeworld }}</p>
+        <p>People: {{ entity.people }}</p>
+        <p>Films: {{ entity.films }}</p>
+        <p>Created: {{ entity.created }}</p>
+        <p>Edited: {{ entity.edited }}</p>
+        <p>Url: {{ entity.url }}</p>
+      }
+    } @else if (elType === NavElementTypes.Planets) {
+      @for (entity of data.results; track entity.name) {
+        <h4> {{ entity.name }}</h4>
+        <p>Rotation period: {{ entity.rotation_period }}</p>
+        <p>Orbital period: {{ entity.orbital_period }}</p>
+        <p>Diameter: {{ entity.diameter }}</p>
+        <p>Climate: {{ entity.climate }}</p>
+        <p>Gravity: {{ entity.gravity }}</p>
+        <p>Terrain: {{ entity.terrain }}</p>
+        <p>Surface water: {{ entity.surface_water }}</p>
+        <p>Population: {{ entity.population }}</p>
+        <p>Residents: {{ entity.residents }}</p>
+        <p>Films: {{ entity.films }}</p>
+      }
+    }
+  }
+
 </div>

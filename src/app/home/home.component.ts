@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { EntityComponent } from '../entity/entity.component';
 import { GeneralInfoComponent } from '../general-info/general-info.component';
 import { HeaderComponent } from '../header/header.component';
-import { navigationElements } from '../navigation-elements';
 import { RouterOutlet } from '@angular/router';
+import { EntitiesService } from '../entities.service';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +18,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  navElements = navigationElements;
+  navElements = this.appService.getAllEntities();
   selectedElementId ?: string;
 
+  constructor(private readonly appService: EntitiesService) {
+  }
+
+
   get selectedElement() {
-    return this.navElements.find(el => el.id === this.selectedElementId);
+    return this.appService.getEntityById(this.selectedElementId);
   }
 
   onSelectElement(id: string) {

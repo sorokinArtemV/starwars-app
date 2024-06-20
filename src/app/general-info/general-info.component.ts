@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { EntitiesService } from '../entities.service';
 
 @Component({
   selector: 'app-general-info',
